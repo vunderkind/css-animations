@@ -4,7 +4,8 @@
     --bgcolor: linear-gradient(34deg, rgba(60,95,254,1) 0%, rgba(91,255,142,1) 100%);
     --bgcolor2: linear-gradient(34deg, rgb(254, 105, 60) 0%, rgba(91,255,142,1) 100%);
     --primaryfont: #fff;
-    --width: 80px;
+    --width: 150px;
+    --smallwidth: 50px;
     background: var(--bgcolor);
     width: 100vw;
     height: 100vh;    
@@ -14,14 +15,29 @@
     color: var(--primaryfont);
 }
 
-#rotate{
-    width: var(--width);
-    height: var(--width);
+.rotate {
+    width: 5px;
+    height: 50px;
     background: var(--bgcolor2);
     animation-duration: 2s;
-    /* animation-name: spin; */
-    animation-name: square;
+    animation-name: spin;
+    /* animation-name: square; */
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
     margin: 0 auto;
+    /* animation-play-state: paused; */
+    /* border-radius: 100%; */
+
+}
+
+:checked ~ rotate {
+    animation-play-state: running;
+}
+
+#square {
+    animation-name: square;
+    width: var(--smallwidth);
+    height: var(--smallwidth);
     border-radius: 100%;
 
 }
@@ -33,16 +49,16 @@
 }
 
 @keyframes square {
-    0% {
-        transform: translate(100%,0%);
+    0%,100% {
+        transform: translate(0%,0%);
     }
     25% {
-        transform: translate(100%, 100%)
+        transform: translate(100%, 0%)
     }
     50% {
-        transform: translate(-100%, 100%)
+        transform: translate(100%, 100%)
     }
     75% {
-        transform: translate(-100%,-100%)
+        transform: translate(0%,100%)
     }
 }
