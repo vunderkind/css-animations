@@ -1,0 +1,32 @@
+
+
+:root {
+    --bgcolor: linear-gradient(34deg, rgba(60,95,254,1) 0%, rgba(91,255,142,1) 100%);
+    --bgcolor2: linear-gradient(34deg, rgb(254, 105, 60) 0%, rgba(91,255,142,1) 100%);
+    --primaryfont: #fff;
+    --width: 200px;
+    background: var(--bgcolor);
+    width: 100vw;
+    height: 100vh;    
+    display: grid;
+    place-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: var(--primaryfont);
+}
+
+#rotate{
+    width: var(--width);
+    height: var(--width);
+    background: var(--bgcolor2);
+    animation-duration: 2s;
+    animation-name: spin;
+    margin: 0 auto;
+    border-radius: 50px;
+
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
