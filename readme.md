@@ -28,3 +28,10 @@ In the element we want to rotate, say a div with id #rotate, we write:
 ```
 
 And we have a basic spin animation. 
+
+## Keep animation running
+As observed, these animations only ran once. This is where `animation-iteration-count` comes in. To keep the animation running in perpetuity, you can add the word `infinite` or specify an actiual number. 
+
+```
+animation-iteration-count: 5;
+```

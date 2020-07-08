@@ -4,7 +4,7 @@
     --bgcolor: linear-gradient(34deg, rgba(60,95,254,1) 0%, rgba(91,255,142,1) 100%);
     --bgcolor2: linear-gradient(34deg, rgb(254, 105, 60) 0%, rgba(91,255,142,1) 100%);
     --primaryfont: #fff;
-    --width: 200px;
+    --width: 80px;
     background: var(--bgcolor);
     width: 100vw;
     height: 100vh;    
@@ -19,14 +19,30 @@
     height: var(--width);
     background: var(--bgcolor2);
     animation-duration: 2s;
-    animation-name: spin;
+    /* animation-name: spin; */
+    animation-name: square;
     margin: 0 auto;
-    border-radius: 50px;
+    border-radius: 100%;
 
 }
 
 @keyframes spin {
     to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes square {
+    0% {
+        transform: translate(100%,0%);
+    }
+    25% {
+        transform: translate(100%, 100%)
+    }
+    50% {
+        transform: translate(-100%, 100%)
+    }
+    75% {
+        transform: translate(-100%,-100%)
     }
 }
